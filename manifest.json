@@ -24,7 +24,7 @@
 
   "content_scripts": [
     {
-      "matches": [ "*://*/*" ],
+      "matches": [ "*://*/*", "file:///*" ],
       "js": [ "rescroll.js" ]
     }
   ],
