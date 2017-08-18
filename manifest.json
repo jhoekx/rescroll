@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "ReScroll",
+  "description": "Repeatedly scroll a page",
+  "version": "0.0.1",
+
+  "author": "jhoekx",
+  "homepage_url": "https://github.com/jhoekx/rescroll",
+  
+  "permissions": [],
+
+  "icons": {
+    "48": "icons/scroll.svg",
+    "96": "icons/scroll.svg"
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/scroll.svg",
+      "32": "icons/scroll.svg"
+    },
+    "default_title": "Toggle automatic scrolling"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [ "*://*/*" ],
+      "js": [ "rescroll.js" ]
+    }
+  ],
+
+  "background": {
+    "scripts": [ "background.js" ]
+  }
+}
