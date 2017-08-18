@@ -5,12 +5,19 @@ let scroll = {
     step: 1
 };
 
-function isAtEndOfScroll(element) {
-    return element.scrollHeight - element.scrollTop === element.clientHeight;
+function getPageHeight() {
+    let body = document.body,
+        html = document.documentElement;
+    return Math.max(body.scrollHeight, body.offsetHeight,
+                    html.clientHeight, html.scrollHeight, html.offsetHeight);
+}
+
+function isAtEndOfScroll() {
+    return window.scrollY + window.innerHeight + scroll.step >= getPageHeight();
 }
 
 function scrollPage() {
-    if (isAtEndOfScroll(document.body)) {
+    if (isAtEndOfScroll()) {
         window.scrollTo(window.scrollX, 0);
     } else {
         window.scrollBy(0, scroll.step);
