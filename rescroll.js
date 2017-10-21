@@ -1,7 +1,7 @@
 "use strict";
 
 let scroll = {
-    delay: 50,
+    delay: 20,
     step: 1
 };
 
