@@ -19,6 +19,7 @@ function isAtEndOfScroll() {
 function scrollPage() {
     if (isAtEndOfScroll()) {
         window.scrollTo(window.scrollX, 0);
+        browser.runtime.sendMessage({isAtEndOfScroll: true});
     } else {
         window.scrollBy(0, scroll.step);
     }
@@ -38,3 +39,5 @@ browser.runtime.onMessage.addListener(function (msg) {
         toggleScroll();
     }
 });
+
+browser.runtime.sendMessage({isContentScriptLoaded: true});
