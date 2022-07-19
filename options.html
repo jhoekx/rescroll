@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>ReScroll Preferences</title>
+
+<style>
+    #rescroll-options {
+        margin-top: 1em;
+    }
+
+    #rescroll-options > div {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0.5em;
+        margin: 0;
+    }
+
+    @media (min-width: 500px) {
+        #rescroll-options label {
+            grid-column: span 4;
+        }
+
+        #rescroll-options input {
+            grid-column: span 4;
+        }
+
+        #rescroll-options span {
+            grid-column: span 2;
+        }
+    }
+
+    @media (max-width: 500px) {
+        #rescroll-options label {
+            grid-column: span 12;
+        }
+
+        #rescroll-options input {
+            grid-column: span 8;
+        }
+
+        #rescroll-options span {
+            grid-column: span 2;
+        }
+    }
+
+    #rescroll-options > p {
+        opacity: 0.5;
+        margin: 0.5em 0 1.5em 0;
+    }
+</style>
+
+<body>
+    <form id="rescroll-options">
+        <div class="browser-style">
+            <label for="step">Step</label>
+            <input id="step" type="number" value="1" min="1">
+            <span class="unit">px</span>
+        </div>
+        <p class="help">The amount of pixels to scroll per frame.</p>
+        <div class="browser-style">
+            <label for="framedelay">Frame delay</label>
+            <input id="framedelay" type="number" value="20" min="1">
+            <span class="unit">ms</span>
+        </div>
+        <p class="help">The timeout in milliseconds between two frames.</p>
+        <div class="browser-style">
+            <label for="startdelay">Start delay</label>
+            <input id="startdelay" type="number" value="0" min="0">
+            <span class="unit">ms</span>
+        </div>
+        <p class="help">The timeout in milliseconds before starting to scroll.</p>
+        <div class="browser-style">
+            <label for="enddelay">End delay</label>
+            <input id="enddelay" type="number" value="0" min="0">
+            <span class="unit">ms</span>
+        </div>
+        <p class="help">The timeout in milliseconds to wait at the bottom before refreshing the page.</p>
+    </form>
+
+    <script src="options.js"></script>
+</body>
