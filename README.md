@@ -7,7 +7,7 @@ A WebExtension to repeatedly scroll a page.
 Install [web-ext](https://github.com/mozilla/web-ext):
 
 ```bash
-$ npm install web-ext
+$ npm install web-ext --save-dev
 ```
 
 Start a development instance of Firefox using:
